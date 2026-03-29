@@ -32,7 +32,8 @@
   "repository": "https://github.com/electron-userland/electron-builder",
   "dependencies": {
     "@types/fs-extra": "^11.0.4",
-    "dmg-license": "1.0.11"
+    "dmg-license": "1.0.11",
+    "electron-builder": ""
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "7.24.8",
@@ -66,10 +67,12 @@
     "pnpm": ">=10"
   },
   "packageManager": "pnpm@10.18.0+sha512.e804f889f1cecc40d572db084eec3e4881739f8dec69c0ff10d2d1beff9a4e309383ba27b5b750059d7f4c149535b6cd0d2cb1ed3aeb739239a4284a68f40cfa",
-  "pnpm": {
-    "patchedDependencies": {
-      "@changesets/cli@2.29.7": "patches/@changesets__cli@2.29.7.patch",
-      "@changesets/assemble-release-plan@6.0.9": "patches/@changesets__assemble-release-plan@6.0.9.patch"
-    }
-  }
+  "patchedDependencies": {
+    "@changesets/cli@2.29.7": "patches/@changesets__cli@2.29.7.patch",
+    "@changesets/assemble-release-plan@6.0.9": "patches/@changesets__assemble-release-plan@6.0.9.patch"
+  },
+  "workspaces": [
+    "packages/**",
+    "test"
+  ]
 }
